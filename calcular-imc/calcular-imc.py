@@ -22,8 +22,9 @@ while (repetir == 's'):
 
     peso = float(input("Digite seu peso: "))
     altura = float(input("Digite sua altura: "))
+    imc_desejado = float(input("O imc normal fica entre 18,50 e 24,99. \nDiga a sua meta de imc: "))
     imc = peso / pow(altura, 2)
-    peso_ideal = 23 * pow(altura,2)
+    peso_ideal = imc_desejado * pow(altura,2)
     
     if imc < 17:        
         print("Você está muito abaixo do peso.")
@@ -41,7 +42,7 @@ while (repetir == 's'):
         print("Você está no nível Obesidade III (mórbida)")
         
     print("Seu IMC é: ", round(imc,2))
-    print("Se deseja ter um IMC igual a 23, seu peso deve ser:  ", peso_ideal)
+    print("Se deseja ter um IMC igual a {0}, seu peso deve ser:  {1}".format(imc_desejado, peso_ideal))
     if peso > peso_ideal:
         print("Você deve perder ", str(round(peso - peso_ideal,2)), " kg")
     elif peso < peso_ideal:
